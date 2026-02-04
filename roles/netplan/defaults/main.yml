@@ -1,1 +1,4 @@
+netplan_config_file: "/etc/netplan/01-netcfg.yaml"
+netplan_renderer: "networkd"
+netplan_interfaces: []
 
