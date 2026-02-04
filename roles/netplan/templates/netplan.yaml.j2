@@ -1,1 +1,24 @@
-
+network:
+  version: 2
+  renderer: {{ netplan_renderer }}
+  ethernets:
+{% for iface in netplan_interfaces %}
+    {{ iface.name }}:
+      dhcp4: {{ iface.dhcp4 | default(false) }}
+{% if iface.addresses %}
+      addresses:
+{% for addr in iface.addresses %}
+        - {{ addr }}
+{% endfor %}
+{% endif %}
+{% if iface.gateway4 %}
+      gateway4: {{ iface.gateway4 }}
+{% endif %}
+{% if iface.nameservers %}
+      nameservers:
+        addresses:
+{% for ns in iface.nameservers %}
+          - {{ ns }}
+{% endfor %}
+{% endif %}
+{% endfor %}
