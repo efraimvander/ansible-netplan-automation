@@ -1,1 +1,25 @@
 
+# tasks file for netplan
+
+- name: Criar ficheiro Netplan a partir do template
+  template:
+    src: netplan.yaml.j2
+    dest: "{{ netplan_config_file }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Aplicar Netplan
+
+# Verificar o YAML antes de aplicar
+- name: Verificar Netplan
+  command: netplan try --timeout 5
+  args:
+    warn: false
+  ignore_errors: true
+  register: netplan_validation
+
+- name: Aviso se falhar a verificação
+  debug:
+    msg: "Netplan não passou! Verifique o YAML."
+  when: netplan_validation.rc != 0
