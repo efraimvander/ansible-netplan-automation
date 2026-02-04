@@ -1,1 +1,5 @@
 
+- hosts: servidores
+  become: true
+  roles:
+    - netplan
