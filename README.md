@@ -19,9 +19,13 @@ Ao utilizar este role:
 
 ##  Estrutura do Repositório
 ansible-netplan-automation/
+
 ├── README.md
+
 ├── ansible.cfg
+
 ├── .gitignore
+
 ├── inventory/
 │ ├── hosts.ini
 │ └── group_vars/
