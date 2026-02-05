@@ -46,4 +46,8 @@ ansible-netplan-automation/
 
 ---
 
+# Executar o playbook 
+ansible-playbook -i inventory/hosts.ini playbooks/netplan.yml
+
+
 
