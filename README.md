@@ -17,9 +17,6 @@ Ao utilizar este role:
 
 ---
 
-##  Estrutura do Repositório
-
-
 
 ## Requisitos
 
