@@ -18,8 +18,6 @@ Ao utilizar este role:
 ---
 
 ##  Estrutura do Repositório
-<img width="431" height="697" alt="image" src="https://github.com/user-attachments/assets/af1823bd-0aeb-4051-ad0c-507b5fd67414" />
-
 
 
 
